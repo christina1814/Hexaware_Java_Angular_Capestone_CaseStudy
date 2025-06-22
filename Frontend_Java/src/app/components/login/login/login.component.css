@@ -1,0 +1,83 @@
+/* Minimal custom CSS with Bootstrap */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+}
+
+.login-card {
+  border-radius: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+.logo-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  border: none;
+  padding: 0.75rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #5a6fd1, #6a4299);
+}
+
+.btn-outline-secondary {
+  border-color: #dee2e6;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+}
+
+.form-control {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .logo-container {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .logo-img {
+    max-height: 40px;
+    max-width: 40px;
+  }
+}

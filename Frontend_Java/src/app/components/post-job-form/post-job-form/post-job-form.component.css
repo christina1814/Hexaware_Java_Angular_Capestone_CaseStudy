@@ -1,0 +1,53 @@
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5d6fd3 0%, #6a4a9e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.25);
+}
+
+.btn-gradient-primary:disabled {
+  opacity: 0.7;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #a3bffa;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.15);
+}
+
+textarea.form-control {
+  border-width: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.badge.bg-primary.bg-opacity-10 {
+  transition: all 0.2s ease;
+}
+
+.badge.bg-primary.bg-opacity-10:hover {
+  background-color: rgba(102, 126, 234, 0.2) !important;
+}
+
+.d-flex.align-items-center.mb-4 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}

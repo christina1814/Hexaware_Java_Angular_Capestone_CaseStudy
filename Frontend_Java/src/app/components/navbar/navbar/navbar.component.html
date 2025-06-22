@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <div class="container-fluid">
+    <!-- Logo and Brand -->
+    <a class="navbar-brand d-flex align-items-center">
+      <img src="assets/logoo.jpg" alt="CareerCrafter Logo" width="35" height="35" class="me-2 rounded-circle shadow-sm">
+      <span class="fw-bold text-white">CareerCrafter</span>
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- EMPLOYER Nav -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isEmployer()">
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-person-circle text-light"></i>
+          <a class="nav-link" routerLink="/employer-home" routerLinkActive="active">Profile</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-briefcase-fill text-light"></i>
+          <a class="nav-link" routerLink="/post-job" routerLinkActive="active">Jobs</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-card-list text-light"></i>
+          <a class="nav-link" routerLink="/employer-applications" routerLinkActive="active">Applications</a>
+        </li>
+      </ul>
+
+      <!-- JOB SEEKER Nav -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isJobSeeker()">
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-person-circle text-light"></i>
+          <a class="nav-link" routerLink="/jobseeker-home" routerLinkActive="active">Profile</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-briefcase text-light"></i>
+          <a class="nav-link" routerLink="/jobseeker/jobs" routerLinkActive="active">Apply Jobs</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item d-flex align-items-center">
+          <i class="bi bi-card-list text-light"></i>
+          <a class="nav-link" routerLink="/jobseeker/applications" routerLinkActive="active">Applications</a>
+        </li>
+      </ul>
+
+      <!-- Right Side Buttons -->
+      <div class="d-flex align-items-center ms-auto">
+        <div class="ms-auto" *ngIf="showLogoutButton()">
+          <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

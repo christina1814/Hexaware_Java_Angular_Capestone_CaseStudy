@@ -1,0 +1,92 @@
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-primary:hover {
+  background: linear-gradient(135deg, #5a6fd1 0%, #6a4a9e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.alert-white {
+  background-color: white;
+  border-left: 4px solid #dc3545;
+}
+
+.empty-state {
+  background-color: #f8f9fa;
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(13, 110, 253, 0.05);
+  border-radius: 50%;
+}
+
+.job-card {
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.application-card {
+  transition: all 0.2s ease;
+}
+
+.application-card:hover {
+  transform: translateX(3px);
+}
+
+.no-applications {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000;
+}
+
+.bg-info {
+  background-color: #0dcaf0 !important;
+  color: #000;
+}
+
+.bg-success {
+  background-color: #198754 !important;
+  color: #fff;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .applications-count {
+    margin-top: 1rem;
+  }
+}

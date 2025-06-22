@@ -1,0 +1,97 @@
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold display-5 mb-3">All <span class="text-primary">Job Listings</span></h2>
+    <p class="lead text-muted">View all active job listings in one place</p>
+    <div class="divider mx-auto bg-primary"></div>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loadingJobs" class="d-flex justify-content-center align-items-center py-5">
+    <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Jobs List -->
+  <div *ngIf="!loadingJobs && allJobs.length > 0">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 ms-auto">
+        {{ allJobs.length }} Active Listings
+      </span>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let job of allJobs">
+        <div class="card h-100 border-0 shadow-sm hover-lift">
+          <div class="card-header bg-gradient-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0 fw-bold">{{ job.title }}</h5>
+              <span class="badge bg-white text-primary rounded-pill">#{{ job.id }}</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="job-details mb-4">
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="bi bi-calendar-event text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Deadline</small>
+                  <p class="mb-0 fw-medium">{{ job.applicationDeadline | date }}</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="bi bi-cash-coin text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Salary</small>
+                  <p class="mb-0 fw-medium">{{ job.salaryRange || 'Not Specified' }}</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="bi bi-geo-alt text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Location</small>
+                  <p class="mb-0 fw-medium">{{ job.location }}</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="bi bi-person-workspace text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Job Type</small>
+                  <p class="mb-0 fw-medium">{{ job.jobType }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-description">
+              <h6 class="fw-semibold mb-2">Description</h6>
+              <p class="text-muted small">{{ job.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loadingJobs && allJobs.length === 0" class="text-center py-5">
+    <div class="empty-state-container py-4">
+      <div class="empty-state-icon mb-4">
+        <i class="fas fa-search fa-3x text-primary"></i>
+      </div>
+      <h3 class="text-dark mb-3">No Jobs Available </h3>
+      <p class="text-muted mb-4">Employers haven't posted jobs yet!!</p>
+      <button class="btn btn-outline-primary" routerLink="/post-job-form">Be the first to post a job</button>
+    </div>
+  </div>
+</div>

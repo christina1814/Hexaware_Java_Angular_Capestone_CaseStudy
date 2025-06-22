@@ -1,0 +1,68 @@
+<div class="login-container">
+  <div class="container h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+        <div class="card login-card shadow-lg">
+          <div class="card-body p-4 p-md-5">
+            <!-- Header -->
+            <div class="text-center mb-5">
+              <div class="logo-container mb-4">
+                <img src="assets/logoo.jpg" alt="CareerCrafter Logo" width="80" height="80" class="rounded-circle shadow-sm">
+              </div>
+              <h2 class="fw-bold text-gradient mb-3">Welcome Back</h2>
+              <p class="text-muted">Sign in to continue your career journey</p>
+            </div>
+
+            <!-- Login Form -->
+            <form (ngSubmit)="onLogin()" #loginForm="ngForm" novalidate>
+              <!-- Email Field -->
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" 
+                       [(ngModel)]="email" required placeholder="name@example.com">
+                <label for="email">
+                  <i class="bi bi-envelope me-2"></i>Email address
+                </label>
+                <div class="invalid-feedback d-block" *ngIf="loginForm.submitted && loginForm.controls['email']?.errors">
+                  Please enter a valid email address
+                </div>
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="password" name="password" 
+                       [(ngModel)]="password" required placeholder="Password">
+                <label for="password">
+                  <i class="bi bi-lock me-2"></i>Password
+                </label>
+                <div class="invalid-feedback d-block" *ngIf="loginForm.submitted && loginForm.controls['password']?.errors">
+                  Please enter your password
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn btn-primary btn-lg w-100 mb-4" 
+                      [disabled]="!loginForm.form.valid" 
+                      [class.btn-loading]="isLoading">
+                <span *ngIf="!isLoading">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                </span>
+                <span *ngIf="isLoading">
+                  <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Signing In...
+                </span>
+              </button>
+            </form>
+
+            <!-- Registration Link -->
+            <div class="text-center mt-4">
+              <p class="text-muted">
+                Don't have an account? 
+                <a routerLink="/register" class="text-primary fw-semibold text-decoration-none">Sign up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="job-dashboard-wrapper">
+  <div class="container dashboard-container">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark mb-3">Manage Your Job Postings</h2>
+      <p class="lead text-dark-75">Find and manage the perfect candidates for your open positions</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="row g-4">
+      <!-- Post New Job Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-hover">
+          <div class="card-body p-4 d-flex flex-column">
+            <div class="icon-wrapper bg-soft-primary mb-3">
+              <i class="bi bi-plus-lg fs-2 text-primary"></i>
+            </div>
+            <h5 class="card-title fw-semibold mb-3">Post a New Job</h5>
+            <p class="card-text text-muted mb-4">Create a new job listing to attract top talent for your open positions.</p>
+            <button class="btn btn-primary mt-auto align-self-start rounded-pill px-4" routerLink="/post-job-form">
+              <i class="bi bi-send me-2"></i>Post Job
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Posted Jobs Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-hover">
+          <div class="card-body p-4 d-flex flex-column">
+            <div class="icon-wrapper bg-soft-primary mb-3">
+              <i class="bi bi-list-ul fs-2 text-primary"></i>
+            </div>
+            <h5 class="card-title fw-semibold mb-3">My Posted Jobs</h5>
+            <p class="card-text text-muted mb-4">View, edit and manage all jobs posted by your company.</p>
+            <button class="btn btn-primary mt-auto align-self-start rounded-pill px-4" routerLink="/my-posted-jobs">
+              <i class="bi bi-eye me-2"></i>View Jobs
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- All Job Listings Card -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-hover">
+          <div class="card-body p-4 d-flex flex-column">
+            <div class="icon-wrapper bg-soft-primary mb-3">
+              <i class="bi bi-briefcase fs-2 text-primary"></i>
+            </div>
+            <h5 class="card-title fw-semibold mb-3">All Job Listings</h5>
+            <p class="card-text text-muted mb-4">View all available job postings posted by various employers.</p>
+            <button class="btn btn-primary mt-auto align-self-start rounded-pill px-4" routerLink="/all-job-postings">
+              <i class="bi bi-search me-2"></i>Browse Jobs
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

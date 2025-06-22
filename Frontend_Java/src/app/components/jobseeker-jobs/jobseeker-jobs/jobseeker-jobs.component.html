@@ -1,0 +1,95 @@
+<div class="container py-5">
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show rounded-3 mb-4" role="alert">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    {{ errorMessage }}
+    <button type="button" class="btn-close" (click)="errorMessage = ''"></button>
+  </div>
+
+  <!-- Jobs List -->
+  <div *ngIf="!errorMessage && jobs.length > 0">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-5 mb-3">Explore <span class="text-primary">Jobs</span></h2>
+      <p class="lead text-muted">Discover exciting career opportunities tailored for you</p>
+      <div class="divider mx-auto bg-primary"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let job of jobs">
+        <div class="card h-100 border-0 rounded-4 overflow-hidden job-card">
+          <div class="card-header bg-transparent p-0 position-relative">
+            <div class="job-header-bg" [ngStyle]="{'background-color': getRandomColor()}"></div>
+            <div class="position-absolute bottom-0 start-0 p-4">
+              <h5 class="card-title text-white mb-0 fw-bold">{{ job.title }}</h5>
+            </div>
+            <div class="position-absolute bottom-0 end-0 p-4">
+              <span class="badge rounded-pill bg-white text-dark shadow-sm">#{{ job.id }}</span>
+            </div>
+          </div>
+          <div class="card-body position-relative">
+            <p class="card-text text-muted mb-4 mt-3">{{ job.description }}</p>
+
+            <div class="job-details">
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="fas fa-map-marker-alt text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Location</small>
+                  <p class="mb-0 fw-medium">{{ job.location }}</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="fas fa-briefcase text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Job Type</small>
+                  <p class="mb-0 fw-medium">{{ job.jobType | titlecase }}</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-2">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="fas fa-calendar-alt text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Deadline</small>
+                  <p class="mb-0 fw-medium">{{ job.applicationDeadline | date }}</p>
+                </div>
+              </div>
+
+              <div *ngIf="job.salaryRange" class="d-flex align-items-center">
+                <div class="icon-circle bg-light-primary me-3">
+                  <i class="fas fa-money-bill-wave text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted">Salary</small>
+                  <p class="mb-0 fw-medium">{{ job.salaryRange }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-0 py-3">
+            <button class="btn btn-gradient-primary w-100 rounded-pill" (click)="apply(job.id)">
+              <i class="bi bi-send-check me-2"></i>Apply Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State for Job Seekers -->
+  <div *ngIf="!errorMessage && jobs.length === 0" class="text-center py-5">
+    <div class="empty-state-container py-4">
+      <div class="empty-state-icon mb-4">
+        <i class="fas fa-search fa-3x text-primary"></i>
+      </div>
+      <h3 class="text-dark mb-3">No Current Openings</h3>
+      <p class="text-muted mb-4">We don't have any open positions right now!</p>
+      <button class="btn btn-outline-primary" routerLink="/jobseeker-home">Check Later</button>
+    </div>
+  </div>
+</div>
